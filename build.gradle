@@ -1,24 +1,17 @@
 apply plugin: 'java'
 apply plugin: 'eclipse'
 
-sourceCompatibility = //choose whatever version you want -1.6 or above.
-version = '1.0'
-jar {
-    manifest {
-        attributes 'Implementation-Title': 'Gradle Quickstart',
-                   'Implementation-Version': version
-    }
-}
+sourceCompatibility = //choose whatever version you want 1.8 or above.
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    // Test Compile Dependencies : 
+    // testImplementation Dependencies : 
     // junit, io.rest-assured, org.hamcrest
     
-    // Code Compile Dependencies
+    // implementation Dependencies
     // com.google.code.gson'
     // commons-collections'
 }
@@ -27,10 +20,3 @@ test {
     systemProperties 'property': 'value'
 }
 
-uploadArchives {
-    repositories {
-       flatDir {
-           dirs 'repos'
-       }
-    }
-}
