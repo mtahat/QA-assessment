@@ -6,7 +6,7 @@ This is Simple Java/gradle application shows how to communicate and consume rest
 this application has been develop for interview purposes.
 
 >**Install & Run Application**
-* **Task 1**: Please use Gradle to build the project dependencies, after you clone the project, fill out the required dependencies listed in the build. gralde file.
+- [ ] **Task 1**: Please use Gradle to build the project dependencies, after you clone the project, fill out the required dependencies listed in the build. gralde file.
 
 follow these stesps: (Eclipe)
  - from eclipse main menu go to File > import
@@ -19,10 +19,10 @@ follow these stesps: (Eclipe)
  - Any time you can exit by typing **Exit**
  - DONE! 
 
-* **Task 2**: Please fix any compile issues before modifying the code.
+- [ ] **Task 2**: Please fix any compile issues before modifying the code.
 
 > **The Design**
-* **Task 3**: Use https://datausa.io/about/api/ to build simple Java Console Apps that takes State Name/Two Letter Codes and Returns the following information:
+- [ ] **Task 3**: Use https://datausa.io/about/api/ to build simple Java Console Apps that takes State Name/Two Letter Codes and Returns the following information:
         - State total Population.
         - State Capital City. 
         - State Largest City.
@@ -33,7 +33,7 @@ Output: Capital City: Austin
         Largest City: Houston 
         Population: 39M
 ```
-* **Task 4**: Optional- Implement a method to return all valid/supported States in this Service. 
+- [ ] **Task 4**: Optional- Implement a method to return all valid/supported States in this Service. 
 ```
 Input: ALL States
 Output: "AL, AS, ...,TX, WA" 
@@ -56,7 +56,7 @@ Main Method, run this project as Java Application
 Use this class to configure you Service Base URL, PORT & Host Names.
 
 > **Main Integration Test**
-**Please add/modify any test needed for this project.** and make sure the existed tests are running green.
+- [ ] **Please add/modify any test needed for this project.** and make sure the existed tests are running green.
 
 **RestApplicationTest.java** : Parameterized test using HamCrest, this covers 
  - all happy scenarios for the 55 
@@ -64,17 +64,17 @@ Use this class to configure you Service Base URL, PORT & Host Names.
  - also this class cover the integration part between the Application, Domain and Util classes.
 
 > **PART TWO: UI Tests** 
-* **Task 1**: write simple UI test ( Using Cypress is big plus) that utilize https://datausa.io/ UI to do the following: 
+- [ ] **Task 1**: write simple UI test ( Using Cypress is big plus) that utilize https://datausa.io/ UI to do the following: 
     - Search for Texas in the main serach box. 
     - Assert that: 
       - 2019 POPULATION is : 29M
       - US SENATORs: John Cornyn, Ted Cruz
       - 2019 MEDIAN AGE : 35.1
-  **Task 2**
+- [ ] **Task 2**
     - Choose CoVid 19 stats and Collect the following:
        - CONFIRMED CASES, DEATHS, CASES PER CAPITA
     - Take Screenshots for Data Dashboard. 
-  **Task 3**
+- [ ] **Task 3**
     - Use any Reporting tool to show the results -- ( Allure Reporting is preferred)
 
 
