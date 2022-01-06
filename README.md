@@ -55,6 +55,9 @@ Main Method, run this project as Java Application
 **CongifUtil.java** 
 Use this class to configure you Service Base URL, PORT & Host Names.
 
+**RestClient.java**
+Complete the missing code for get and extract methods.
+
 > **Main Integration Test**
 - [ ] **Please add/modify any test needed for this project.** and make sure the existed tests are running green.
 
