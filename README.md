@@ -11,7 +11,7 @@ this application has been develop for interview purposes.
 follow these stesps: (Eclipe)
  - from eclipse main menu go to File > import
  - Select **Existing gradle Project** > Project Root Directory
- - Browser to your project root 'your local path'\api-communicator
+ - Browser to your project root 'your local path'\QA-assessment
  - Click **Finish** the project will be imported.
  - Navigate to **RestApplication.java** in src/main/java
  - Right Click on the Class name, then choose **Run As Java Application**
