@@ -21,9 +21,21 @@ follow these stesps: (Eclipe)
 
 > **The Design**
 * Task 2: Use https://datausa.io/about/api/ to build simple Java Console Apps that takes State Name/Two Letter Codes and Returns the following information:
-        1- State total Population.
-        2- State Capital City. 
-
+        - State total Population.
+        - State Capital City. 
+        - State Largest City.
+* Sample: output: 
+``` 
+Input: Texas
+Output: Capital City: Austin
+        Largest City: Houston 
+        Population: 39M
+```
+* Task 3: Optional- Implement a method to return all valid/supported States in this Service. 
+```
+Input: ALL States
+Output: "AL, AS, ...,TX, WA" 
+```
 ![design](https://user-images.githubusercontent.com/45109004/48676622-e783d600-eb2e-11e8-9222-0cb591d36529.png)
 
 > **Main Classes**
@@ -37,13 +49,29 @@ Main Method, run this project as Java Application
     - state name: first letter should be upper case, for example: New York
     - all : shows you total number of states hosted by the service.
    - return > **results** taken from the response.
-   
+**CongifUtil.java** 
+Use this class to configure you Service Base URL, PORT & Host Names.
+
 > **Main Integration Test**
 
-**RestApplicationTest.java** : Parameterized test, this covers 
+**RestApplicationTest.java** : Parameterized test using HamCrest, this covers 
  - all happy scenarios for the 55 
  - states that the service support, plus the 'all' option.
  - also this class cover the integration part between the Application, Domain and Util classes.
+
+> **PART TWO: UI Tests** 
+* Task 1: write simple UI test ( Using Cypress is big plus) that utilize https://datausa.io/ UI to do the following: 
+    - Search for Texas in the main serach box. 
+    - Assert that: 
+      - 2019 POPULATION is : 29M
+      - US SENATORs: John Cornyn, Ted Cruz
+      - 2019 MEDIAN AGE : 35.1
+    - Choose CoVid 19 stats and Collect the following:
+       - CONFIRMED CASES, DEATHS, CASES PER CAPITA
+    - Take Screenshots for Data Dashboard. 
+    - Use any Reporting tool to show the results -- ( Allure Reporting is preferred)
+
+
  
 
  
