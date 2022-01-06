@@ -6,7 +6,7 @@ This is Simple Java/gradle application shows how to communicate and consume rest
 this application has been develop for interview purposes.
 
 >**Install & Run Application**
-- [ ] **Task 1**: Please use Gradle to build the project dependencies, after you clone the project, fill out the required dependencies listed in the build. gralde file.
+- [ ] **Task 1**: Please use Gradle to build the project dependencies, after you clone the project, fill out the required dependencies listed in the build.gralde file, feel free to use any gradle/java plugins. you can use your own build.gradle file as well.
 
 follow these stesps: (Eclipe)
  - from eclipse main menu go to File > import
