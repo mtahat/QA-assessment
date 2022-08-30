@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- https://developers.google.com/chart/interactive/docs/gallery/geochart#full -->
+    
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['geochart']});
+      google.charts.setOnLoadCallback(drawRegionsMap);
+      
+      //drawRegionsMap(JSON.parse(data.context));
+      window.addEventListener("message", (event) => {
+        if (event.data.context) {
+          drawRegionsMap(JSON.parse(event.data.context));
+        }
+      });
+      
+      
+      function drawRegionsMap({display, riskScore}) {
+        
+        
+        var data = google.visualization.arrayToDataTable([
+          ['State', 'Likelihood(%)'],
+          ['Florida', 0]
+        ]);
+        
+        display.forEach(function(my_State) {
+          if (my_State[1] > 100){
+            data.addRow([my_State[0], 100])
+          } else if (my_State[1] < 0){
+            data.addRow([my_State[0], 0])
+          }else{
+            data.addRow([my_State[0], my_State[1]])
+          }
+        });
+
+        riskScore.forEach(function(risk) {
+          if (risk[1] > 100){
+            data.addRow([risk[0], 100])
+          } else if (risk[1] < 0){
+            data.addRow([risk[0], 0])
+          }else{
+            data.addRow([risk[0], risk[1]])
+          }
+        });
+
+        var options = {
+            region: 'US',
+            colorAxis: {colors: ['#e31b23', 'yellow', '#00853f']},
+            displayMode: 'regions',
+            resolution: 'provinces',
+            backgroundColor: '#81d4fa',
+            datalessRegionColor: '#ffffff',
+            defaultColor: '#f5f5f5',
+    };
+
+        var chart = new google.visualization.GeoChart(document.getElementById('geochart'));
+
+        chart.draw(data, options);
+      }
+      
+    </script>
+  </head>
+  <style>
+
+    table {
+    
+      font-family: arial, sans-serif;
+    
+      border-collapse: collapse;
+    
+      width: 100%;
+    
+    }
+    
+    
+    td, th {
+    
+      border: 1px solid #dddddd;
+    
+      text-align: left;
+    
+      padding: 8px;
+    
+    }
+    
+    
+    tr:nth-child(even) {
+    
+      background-color: #dddddd;
+    
+    }
+    
+    </style>
+  <body>
+    <FORM NAME="myform" ACTION="index.html" METHOD="POST">How Long Have Your Been Pregnant? <BR>
+    <INPUT TYPE="number" id="input" NAME="inputbox" VALUE="" placeholder="# of Weeks"><P>
+    <button type="submit">Submit</button>
+    </FORM>
+    <h1 style="text-align: center;">Your Likelihood of Getting an Abortion By State</h1>
+    <div id="geochart" style="width: 900px; height: 500px; margin-left: 1.75in;"></div>
+    <h2>Is Parental Consent Needed?</h2>
+    <table>
+      <thread>
+      <tr>
+        <th>States</th>
+        <th>Age</th>
+        <th>Type</th>
+      </tr>
+    </thread>
+    <tbody>
+      <tr>
+        <td>Connecticut</td>
+        <td>  </td>
+        <td>No Parental Consent Needed</td>
+      </tr>
+      <tr>
+        <td>Indiana</td>
+        <td>>18</td>
+        <td>From Parent or Legal Guardian</td>
+      </tr>
+      <tr>
+        <td>New Hampshire</td>
+        <td>>18</td>
+        <td>Notify a Parent 48 Hours Prior</td>
+      </tr>
+      <tr>
+        <td>Ohio</td>
+        <td>>18</td>
+        <td>From Parent or Legal Guardian</td>
+      </tr>
+      <tr>
+        <td>South Carolina</td>
+        <td>>17</td>
+        <td>From Parent or Grandparent</td>
+      </tr>
+      <tr>
+        <td>Texas</td>
+        <td>>18</td>
+        <td>From one parent and sepreatly notfiy a parent 48 hours prior</td>
+      </tr>
+    </tbody>
+    </table>
+  </body>
+</html>
